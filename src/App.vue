@@ -1,28 +1,32 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="root">
+    <Row>
+      <!-- 个性签名部分 -->
+      <Row class="signatrue">
+        <Col class="sign-text"  :xs="{span:22,offset:2}" :lg="{span:10,offset:6}">不曾执着追求，就别无谓奢望</Col>
+
+      </Row>
+    </Row>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  name: "app",
+  data: function() {
+    return {};
   }
-}
+};
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="less" scoped>
+.root {
+  background-color: rgb(30, 36, 60);
+}
+.signatrue {
+  position: absolute;
+  z-index: 99;
+  float: left;
+  top: 80px;
+  width: 100%;
 }
 </style>
