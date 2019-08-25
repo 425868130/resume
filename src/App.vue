@@ -152,7 +152,8 @@
               <span class="item-title">就职于同望科技股份有限公司，担任v3平台框架客户端组开发工程师</span>
               <br>
               <br>1. 基于Vue.js和iView进行二次开发，包装可复用的UI组件。
-              <br>2. 负责v3平台二次开发脚手架工具(类似于 Vue CLI )开发，该工具使用NodeJs开发，主要为平台二次开发及外包提供便捷的工具支持，能按照公司内部二次开发项目规范生成对应的初始化项目目录结构，
+              <br>2. 负责软件产业互联平台(<a href="http://www.vtoone.com" target="_blank">www.vtoone.com</a>) 网站发包管理模块及服务订单模块编写，这两个模块主要提供企业用户在平台上进行项目发布，对已发布的项目进行管理，历史订单查询等功能。项目基于Spring MVC+Mybatis搭建，数据库使用MySQL，前端使用公司内部封装的vui组件，我负责了对应功能模块的前端页面编写和后端Controller层Service层业务逻辑编写工作。
+              <br>3. 负责v3平台二次开发脚手架工具(类似于 Vue CLI )开发，该工具使用NodeJs开发，主要为平台二次开发及外包提供便捷的工具支持，能按照公司内部二次开发项目规范生成对应的初始化项目目录结构，
               通过交互式命令(使用Inquirer.js)对项目类型及细节进行配置，同时提供命令进行项目打包、将构件发布到公司vstore仓库、构件部署、构件安装卸载及依赖管理。从该项目启动之初便深度参与，期间对项目结构进行优化，并提取公用逻辑到单独npm包，提高了代码复用率，截至离职前代码贡献率达65%，
               该工具已发布到npm仓库，地址为:
               <a
@@ -164,11 +165,11 @@
                 href="https://npm-stat.com/charts.html?package=v3-cli&from=2018-01-01&to=2019-02-27"
                 target="_blank"
               >8千</a>。通过该项目使我学习并掌握了Nodejs开发，接触并学习了Es6语法以及Promise/Async异步编程，了解了webpack及其配置。
-              <br>3. 负责平台客户端二次开发窗体打包中心项目(基于NodeJs)，为其修复bug和依据需求增加新功能，如封装并修改webpack的file-loader实现页面图片资源地址依据运行环境动态生成；封装vue的多语言方案vue-i18n，实现平台内部的前端多语言；实现vue文件依赖树解析等。
-              <br>4. 负责平台皮肤方案的前端部分，通过编写webpack loader实现打包时解析并提取less文件中的变量定义(通过postcss插件)信息及计算vue的scoped样式属性选择器的值，编写less插件实现less渲染成css时添加对应scoped属性选择器以及将微信端的rpx单位值转换为对应的rem值。
-              <br>5. 使用Java编写maven插件，实现在maven install阶段解析pom.xml中v3平台相关配置信息，并按配置执行相关逻辑，如解析配置中指定的less文件，提取其中的less变量定义和注释信息、解析指定js文件中的多语言接口调用，解析后处理成指定格式的xml文件写入到最终生成的jar文件中。
-              <br>6. 负责平台执行系统后台(java)与打包服务对接，对接打包服务的多语言和皮肤方案，对窗体打包后的jar文件进行解析提取元信息，生成后台服务所需的配置对象并保存到缓存数据库中。
-              <br>7. 其他bug修复及细碎功能。
+              <br>4. 负责平台客户端二次开发窗体打包中心项目(基于NodeJs)，为其修复bug和依据需求增加新功能，如封装并修改webpack的file-loader实现页面图片资源地址依据运行环境动态生成；封装vue的多语言方案vue-i18n，实现平台内部的前端多语言；实现vue文件依赖树解析等。
+              <br>5. 负责平台皮肤方案的前端部分，通过编写webpack loader实现打包时解析并提取less文件中的变量定义(通过postcss插件)信息及计算vue的scoped样式属性选择器的值，编写less插件实现less渲染成css时添加对应scoped属性选择器以及将微信端的rpx单位值转换为对应的rem值。
+              <br>6. 使用Java编写maven插件，实现在maven install阶段解析pom.xml中v3平台相关配置信息，并按配置执行相关逻辑，如解析配置中指定的less文件，提取其中的less变量定义和注释信息、解析指定js文件中的多语言接口调用，解析后处理成指定格式的xml文件写入到最终生成的jar文件中。
+              <br>7. 负责平台执行系统后台(java)与打包服务对接，对接打包服务的多语言和皮肤方案，对窗体打包后的jar文件进行解析提取元信息，生成后台服务所需的配置对象并保存到缓存数据库中。
+              <br>8. 其他bug修复及细碎功能。
             </p>
           </TimelineItem>
 
@@ -193,12 +194,13 @@
 let echarts = require("echarts/lib/echarts");
 import radarOption from "./radarOption.js";
 // 引入柱状图组件
-require("echarts/lib/chart/radar");
+import "echarts/lib/chart/radar";
 
 export default {
   name: "app",
   data: function() {
-    return {};
+    return {
+    };
   },
   mounted() {
     let radar = echarts.init(this.$refs.radarMap);
